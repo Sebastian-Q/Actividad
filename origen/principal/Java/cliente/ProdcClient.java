@@ -24,7 +24,7 @@ public class ProdcClient {
 
         do{
             System.out.println("Seleccionar una Opción");
-            System.out.println("1.-Ejercicio 02 \n2.-Ejercicio 03 \n3.-Ejercico 04");
+            System.out.println("1.-Ejercicio 02 \n2.-Ejercicio 03 \n3.-Ejercico 04 \n4.-IMC"");
             int caso= scaner.nextInt();
             switch (caso){
                 case 1:
@@ -68,6 +68,17 @@ public class ProdcClient {
                     Object[] info ={cant, num1, num2, num3, num4, num5};
                     String response = (String) client.execute("Methods.acomodar", info);
                     System.out.println(response);
+                    break;
+                case 4:
+                    System.out.println("Ingrese su Nombre...");
+                    String name = scaner.next();
+                    System.out.println("Ingrese su Alura...");
+                    double altura = scaner.nextDouble();
+                    System.out.println("Ingrese su Peso...");
+                    double peso = scaner.nextDouble();
+                    Object[] data = {name, altura, peso};
+                    String responseIMC = (String) client.execute("Methods.imc", data);
+                    System.out.println(responseIMC);
                     break;
                 default:
                     System.out.println("No selecciono ninguna opcion");
