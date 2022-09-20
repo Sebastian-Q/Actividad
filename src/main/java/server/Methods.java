@@ -1,6 +1,12 @@
 package server;
 
 public class Methods {
+    
+    //IMC
+    public String imc(String name, double height, double peso){
+        double imc = (peso/(height * height));
+        return "Nombre: "+ name + " IMC: "+ imc;
+    }
 
     //EJercicio 2
     public String calcular(double preace1, double preace2, double preace3, double preace4) {
